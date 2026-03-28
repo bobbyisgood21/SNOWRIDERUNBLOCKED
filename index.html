@@ -3,78 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games Portal</title>
+    <title>UNBLOCKED GAMES PORTAL</title>
     <style>
-        /* Modern Dark Theme */
+        /* Pro-Gaming Aesthetic */
         body { 
-            background: radial-gradient(circle at top, #1a1c2c 0%, #07080c 100%);
-            color: #00ffcc; 
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            color: #ffffff; 
             text-align: center; 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
             margin: 0; 
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
+            overflow: hidden; /* Keeps the page clean */
         }
 
+        /* The Animated Title Area */
         header {
-            padding: 20px 0;
             margin-bottom: 20px;
+            z-index: 10;
         }
 
         h1 { 
-            font-size: 42px; 
-            letter-spacing: 4px;
+            font-size: 50px; 
+            letter-spacing: 5px;
             margin: 0;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #fff, #00ffcc, #fff);
+            background: linear-gradient(to bottom, #fff, #00ffcc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.5));
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.6));
         }
 
-        /* The Game Frame Container */
-        .game-container {
+        /* The Main Game Box (The GUI) */
+        .game-wrapper {
             position: relative;
-            display: inline-block;
-            width: 90%;
-            max-width: 1000px;
-            background: #000;
+            background: rgba(22, 27, 34, 0.85);
+            backdrop-filter: blur(15px);
             border: 2px solid #00ffcc;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 40px rgba(0, 255, 204, 0.2);
-            aspect-ratio: 16 / 9; /* Keeps the game box shaped correctly */
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 0 60px rgba(0, 255, 204, 0.2), inset 0 0 20px rgba(0, 255, 204, 0.1);
+            width: 90vw;
+            max-width: 1000px;
+            transition: 0.3s;
         }
 
+        /* The Actual Game Window */
         iframe {
             width: 100%;
-            height: 100%;
-            border: none;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: #000;
         }
 
-        /* Status Indicators */
-        .footer-info {
-            margin-top: 30px;
+        /* Lower GUI Dashboard */
+        .gui-footer {
+            margin-top: 15px;
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            justify-content: space-between;
+            padding: 0 10px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .status {
-            font-size: 12px;
-            color: #555;
+        .status-pill {
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid #00ffcc;
+            color: #00ffcc;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .dot {
-            height: 8px;
             width: 8px;
-            background-color: #00ffcc;
+            height: 8px;
+            background: #00ffcc;
             border-radius: 50%;
-            display: inline-block;
-            margin-right: 5px;
-            box-shadow: 0 0 10px #00ffcc;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        /* Fullscreen Prompt */
+        .tip {
+            margin-top: 20px;
+            color: #484f58;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
 
     </style>
@@ -85,15 +115,18 @@
         <h1>UNBLOCKED GAMES</h1>
     </header>
 
-    <div class="game-container">
+    <div class="game-wrapper">
         <iframe src="https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk160/gjv3@main/sr3d/sr3d.xml" 
                 allowfullscreen="true"></iframe>
+        
+        <div class="gui-footer">
+            <div class="status-pill"><span class="dot"></span> System: Active</div>
+            <div class="status-pill" style="border-color: #555; color: #888;">Proxy: Enabled</div>
+            <div class="status-pill">V 1.0.8</div>
+        </div>
     </div>
 
-    <div class="footer-info">
-        <div class="status"><span class="dot"></span> SERVER: ONLINE</div>
-        <div class="status"><span class="dot"></span> CONNECTION: SECURE</div>
-    </div>
+    <div class="tip">USE KEYBOARD TO PLAY • PRESS 'F' FOR FULLSCREEN</div>
 
 </body>
 </html>
